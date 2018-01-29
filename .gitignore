@@ -7,6 +7,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+#É¾³ıÁË.ideaÎÄ¼ş¼Ğ
 .idea/
 .Python
 build/
