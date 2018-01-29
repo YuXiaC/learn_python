@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import types
 
 class Student(object):
 
@@ -51,7 +52,36 @@ class Tortoise(Animal):
     def run(self):
         print 'Tortoise is running slowly...'
 
+#多态
 run_twice(Animal())
 run_twice(Dog())
 run_twice(Cat())
 run_twice(Tortoise())
+
+a=Animal()
+print type(a)
+
+print type('abd')==types.StringType
+
+print dir('abc')
+
+#如果你调用len()函数试图获取一个对象的长度，
+# 实际上，在len()函数内部，它自动去调用该对象的__len__()方法
+class MyObject(object):
+    def __int__(self):
+        self.x=9
+    #def __len__(self):
+    #    return 100
+
+    def power(self):
+        return self.x*self.x
+
+obj=MyObject()
+#print len(obj)
+
+#getattr()、setattr()以及hasattr()，我们可以直接操作一个对象的状态
+print hasattr(obj,'x') #此处应该有问题
+setattr(obj,'y',19)
+print hasattr(obj,'y')
+print obj.y
+print hasattr(obj,'power')
