@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import  time,threading
+import random,Queue
+from multiprocessing.managers import BaseManager
 
 
 """
@@ -50,6 +52,7 @@ print balance
 
 
 #ThreadLocal
+"""
 local_school = threading.local()
 
 def process_student():
@@ -66,3 +69,6 @@ t1.start()
 t2.start()
 t1.join()
 t2.join()
+"""
+
+
