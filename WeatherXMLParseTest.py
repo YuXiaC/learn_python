@@ -6,8 +6,11 @@ from xml.parsers.expat import ParserCreate  #解析器
 import re  #正则表达式
 
 try:
+    #百度地图目前的天气查询API不能被服务端使用，现在只能由微信小程序使用
+    #下面的查询链接来自网上
     #创建链接实例,获取百度天气API
-    page = urllib.urlopen('http://api.map.baidu.com/telematics/v2/weather?location=%E4%BD%9B%E5%B1%B1&ak=B8aced94da0b345579f481a1294c9094')
+    #page = urllib.urlopen('http://api.map.baidu.com/telematics/v2/weather?location=%E4%BD%9B%E5%B1%B1&ak=B8aced94da0b345579f481a1294c9094')
+    page = urllib.urlopen('http://api.map.baidu.com/telematics/v2/weather?location=北京&ak=B8aced94da0b345579f481a1294c9094')
     #读取实例内容,赋值给XML
     XML = page.read()
 finally:
